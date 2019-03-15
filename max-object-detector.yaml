@@ -22,10 +22,10 @@ license:
    Apache 2.0
 featured:
    True
-implementations:
+implementation:
    source:
       github: https://github.com/IBM/MAX-Object-Detector
-   containers:
+   container:
       - name: max-object-detector
         image: codait/max-object-detector:latest
         ports:
