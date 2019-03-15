@@ -12,21 +12,15 @@
 
 name: Object Detector
 id: max-od
-description: 
-   Localize and identify multiple objects in a single image.
-domain: 
-   Object detection in images
-website:
-   https://developer.ibm.com/exchanges/models/all/max-object-detector
-license:
-   Apache 2.0
-featured:
-   True
+description: "Localize and identify multiple objects in a single image."
+domain: "Object detection in images"
+website: "https://developer.ibm.com/exchanges/models/all/max-object-detector"
+license: "Apache 2.0"
+featured: true
 implementation:
    source:
-      github: https://github.com/IBM/MAX-Object-Detector
+      github: "https://github.com/IBM/MAX-Object-Detector"
    container:
       - name: max-object-detector
-        image: codait/max-object-detector:latest
-        ports:
-        - containerPort: 5000
+        image: "codait/max-object-detector:latest"  # docker image
+        
