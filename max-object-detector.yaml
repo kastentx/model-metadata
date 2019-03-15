@@ -26,7 +26,7 @@ implementations:
    source:
       github: https://github.com/IBM/MAX-Object-Detector
    containers:
-      - name: max-audio-classifier
-        image: codait/max-audio-classifier:latest
+      - name: max-object-detector
+        image: codait/max-object-detector:latest
         ports:
         - containerPort: 5000
