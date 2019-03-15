@@ -55,3 +55,115 @@ implementation:
    container:
       - name: max-facial-age-estimator
         image: "codait/max-facial-age-estimator:latest"  # docker image
+
+---
+
+name: Image Caption Generator
+id: max-icg
+description: "Generate captions that describe the contents of images."
+domain: "Image-To-Text Translation"
+website: "https://developer.ibm.com/exchanges/models/all/max-image-caption-generator/"
+license: "Apache 2.0"
+featured: true
+implementation:
+   source:
+      github: "https://github.com/IBM/MAX-Image-Caption-Generator"
+   container:
+      - name: max-image-caption-generator
+        image: "codait/max-image-caption-generator:latest"  # docker image
+
+---
+
+name: Image Segmenter
+id: max-is
+description: "Identify objects in an image, additionally assigning each pixel of the image to a particular object."
+domain: "Object detection in images"
+website: "https://developer.ibm.com/exchanges/models/all/max-image-segmenter"
+license: "Apache 2.0"
+featured: true
+implementation:
+   source:
+      github: "https://github.com/IBM/MAX-Image-Segmenter"
+   container:
+      - name: max-image-segmenter
+        image: "codait/max-image-segmenter:latest"  # docker image
+
+---
+
+name: Named Entity Tagger
+id: max-net
+description: "Locate and tag named entities in text."
+domain: "Named Entity Recognition"
+website: "https://developer.ibm.com/exchanges/models/all/max-named-entity-tagger"
+license: "Apache 2.0"
+featured: true
+implementation:
+   source:
+      github: "https://github.com/IBM/MAX-Named-Entity-Tagger"
+   container:
+      - name: max-named-entity-tagger
+        image: "codait/max-named-entity-tagger:latest"  # docker image
+
+---
+
+name: News Text Generator
+id: max-ntg
+description: "Generate English-language text similar to the news articles in the One Billion Words data set."
+domain: "Language Modeling"
+website: "https://developer.ibm.com/exchanges/models/all/max-news-text-generator"
+license: "Apache 2.0"
+featured: true
+implementation:
+   source:
+      github: "https://github.com/IBM/MAX-News-Text-Generator"
+   container:
+      - name: max-news-text-generator
+        image: "codait/max-news-text-generator:latest"  # docker image
+
+---
+
+name: Object Detector
+id: max-od
+description: "Localize and identify multiple objects in a single image."
+domain: "Object detection in images"
+website: "https://developer.ibm.com/exchanges/models/all/max-object-detector"
+license: "Apache 2.0"
+featured: true
+implementation:
+   source:
+      github: "https://github.com/IBM/MAX-Object-Detector"
+   container:
+      - name: max-object-detector
+        image: "codait/max-object-detector:latest"  # docker image
+
+---
+
+name: Sports Video Classifier
+id: max-svc
+description: "Classify sporting activities in videos."
+domain: "Video Classification"
+website: "https://developer.ibm.com/exchanges/models/all/max-sports-video-classifier"
+license: "Apache 2.0"
+featured: true
+implementation:
+   source:
+      github: "https://github.com/IBM/MAX-Sports-Video-Classifier"
+   container:
+      - name:  max-sports-video-classifier
+        image: "codait/ max-sports-video-classifier:latest"  # docker image
+
+---
+
+name: Weather Forecaster
+id: max-wf
+description: "Predict hourly weather features given historical data for a specific location"
+domain: "Time Series Prediction"
+website: "https://developer.ibm.com/exchanges/models/all/max-weather-forecaster"
+license: "Apache 2.0"
+featured: true
+implementation:
+   source:
+      github: "https://github.com/IBM/MAX-Weather-Forecaster"
+   container:
+      - name: max-weather-forecaster
+        image: "codait/max-weather-forecaster:latest"  # docker image
