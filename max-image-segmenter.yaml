@@ -1,0 +1,25 @@
+# Licensed under the Apache License, Version 2.0 (the "License");
+# you may not use this file except in compliance with the License.
+# You may obtain a copy of the License at
+#
+# http://www.apache.org/licenses/LICENSE-2.0
+#
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an "AS IS" BASIS,
+# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+# See the License for the specific language governing permissions and
+# limitations under the License.
+
+name: Image Segmenter
+id: max-is
+description: "Identify objects in an image, additionally assigning each pixel of the image to a particular object."
+domain: "Object detection in images"
+website: "https://developer.ibm.com/exchanges/models/all/max-image-segmenter"
+license: "Apache 2.0"
+featured: true
+implementation:
+   source:
+      github: "https://github.com/IBM/MAX-Image-Segmenter"
+   container:
+      - name: max-image-segmenter
+        image: "codait/max-image-segmenter:latest"  # docker image
