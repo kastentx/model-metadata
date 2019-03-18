@@ -1,0 +1,37 @@
+# Licensed under the Apache License, Version 2.0 (the "License");
+# you may not use this file except in compliance with the License.
+# You may obtain a copy of the License at
+#
+# http://www.apache.org/licenses/LICENSE-2.0
+#
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an "AS IS" BASIS,
+# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+# See the License for the specific language governing permissions and
+# limitations under the License.
+
+name: Train Spark model with IBM Cloud Spark Service
+description: |
+  Create and train Spark model with IBM Cloud Spark Service
+inputs:
+  - {name: bucket_name,           description: 'Required. Object storage bucket name', default: 'dummy-bucket-name'}
+  - {name: data_filename,         description: 'Name of the data binary', default: 'credit_risk_training.csv'}
+  - {name: model_filename,        description: 'Name of the training model file', default: 'model.py'}
+  - {name: spark_entrypoint,      description: 'Entrypoint command for training the spark model', default: 'python model.py'}
+outputs:
+  - {name: model-uid,             description: 'UID for the Spark Model'}
+  - {name: model-name,            description: 'Name for the Spark Model'}
+implementation:
+  container:
+    image: docker.io/tomcli/training_with_spark_service:0.10
+    command: ['python']
+    args: [
+      -u, store_and_deploy_model.py,
+      --bucket_name, {inputValue: bucket_name},
+      --data_filename, {inputValue: data_filename},
+      --model_filename, {inputValue: model_filename},
+      --spark_entrypoint, {inputValue: spark_entrypoint}
+    ]
+    fileOutputs:
+      model-uid: /tmp/model_uid.txt
+      model-name: /tmp/model_name.txt
