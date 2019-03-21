@@ -10,21 +10,21 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-name: Model Training using Watson Machine Learning
+name: 'Watson Machine Learning - Train Model'
 description: |
   Train Machine Learning and Deep Learning Models in the Cloud using Watson Machine Learning
 inputs:
-  - {name: train-code,        description: 'Required. Code for training ML/DL models'}
-  - {name: execution-command, description: 'Required. Execution command to start the model training.'}
+  - {name: train_code,        description: 'Required. Code for training ML/DL models'}
+  - {name: execution_command, description: 'Required. Execution command to start the model training.'}
   - {name: config,            description: 'Required. Credential configfile is properly created.'}
   - {name: framework,         description: 'ML/DL Model Framework', default: 'tensorflow'}
-  - {name: framework-version, description: 'Model Framework version', default: '1.5'}
+  - {name: framework_version, description: 'Model Framework version', default: '1.5'}
   - {name: runtime,           description: 'Model Code runtime language', default: 'python'}
-  - {name: runtime-version,   description: 'Model Code runtime version', default: '3.5'}
-  - {name: run-definition,    description: 'Name for the Watson Machine Learning training definition', default: 'python-tensorflow-definition'}
-  - {name: run-name,          description: 'Name for the Watson Machine Learning training-runs', default: 'python-tensorflow-run'}
+  - {name: runtime_version,   description: 'Model Code runtime version', default: '3.5'}
+  - {name: run_definition,    description: 'Name for the Watson Machine Learning training definition', default: 'python-tensorflow-definition'}
+  - {name: run_name,          description: 'Name for the Watson Machine Learning training-runs', default: 'python-tensorflow-run'}
 outputs:
-  - {name: run-uid,           description: 'UID for the Watson Machine Learning training-runs'}
+  - {name: run_uid,           description: 'UID for the Watson Machine Learning training-runs'}
 implementation:
   container:
     image: docker.io/aipipeline/wml-train:latest
@@ -32,14 +32,14 @@ implementation:
     args: [
       /app/wml-train.py,
       --config, {inputValue: config},
-      --train-code, {inputValue: train-code},
-      --execution-command, {inputValue: execution-command},
+      --train-code, {inputValue: train_code},
+      --execution-command, {inputValue: execution_command},
       --framework, {inputValue: framework},
-      --framework-version, {inputValue: framework-version},
+      --framework-version, {inputValue: framework_version},
       --runtime, {inputValue: runtime},
-      --runtime-version, {inputValue: runtime-version},
-      --run-definition, {inputValue: run-definition},
-      --run-name, {inputValue: run-name}
+      --runtime-version, {inputValue: runtime_version},
+      --run-definition, {inputValue: run_definition},
+      --run-name, {inputValue: run_name}
     ]
     fileOutputs:
-      run-uid: /tmp/run_uid
+      run_uid: /tmp/run_uid

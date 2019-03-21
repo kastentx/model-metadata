@@ -10,13 +10,13 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-name: Deploy stored model on Watson Machine Learning
+name: 'Watson Machine Learning - Deploy Model'
 description: |
   Deploy stored model on Watson Machine Learning as a web service.
 inputs:
-  - {name: model-uid,       description: 'Required. UID for the Watson Machine Learning model'}
-  - {name: model-name,      description: 'Required. Model Name on Watson Machine Learning'}
-  - {name: scoring-payload, description: 'Required. Sample Payload file name in the object storage'}
+  - {name: model_uid,       description: 'Required. UID for the Watson Machine Learning model'}
+  - {name: model_name,      description: 'Required. Model Name on Watson Machine Learning'}
+  - {name: scoring_payload, description: 'Required. Sample Payload file name in the object storage'}
 outputs:
   - {name: output,          description: 'Link to the deployed model web service'}
 implementation:
@@ -25,9 +25,9 @@ implementation:
     command: ['python3']
     args: [
       /app/wml-deploy.py,
-      --model-uid, {inputValue: model-uid},
-      --model-name, {inputValue: model-name},
-      --scoring-payload, {inputValue: scoring-payload}
+      --model-uid, {inputValue: model_uid},
+      --model-name, {inputValue: model_name},
+      --scoring-payload, {inputValue: scoring_payload}
     ]
     fileOutputs:
       output: /tmp/output

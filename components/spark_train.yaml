@@ -10,7 +10,7 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-name: Train Spark model with IBM Cloud Spark Service
+name: 'IBM Cloud Spark Service - Train model'
 description: |
   Create and train Spark model with IBM Cloud Spark Service
 inputs:

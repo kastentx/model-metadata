@@ -10,7 +10,7 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-name: Create secret to store credentials on Kubernetes Cluster
+name: 'Kubernetes Cluster - Create secret'
 description: |
   Create secret to store pipeline credentials on Kubernetes Cluster
 inputs:
@@ -18,7 +18,7 @@ inputs:
   - {name: url,             description: 'Required. GitHub raw path for accessing the credential file'}
   - {name: name,            description: 'Required. Secret Name to be stored in Kubernetes'}
 outputs:
-  - {name: secret-name,     description: 'Kubernetes secret name'}
+  - {name: secret_name,     description: 'Kubernetes secret name'}
 implementation:
   container:
     image: docker.io/aipipeline/wml-config:latest
@@ -30,4 +30,4 @@ implementation:
       --name, {inputValue: name}
     ]
     fileOutputs:
-      secret-name: /tmp/$name
+      secret_name: /tmp/ai-pipeline-creds
