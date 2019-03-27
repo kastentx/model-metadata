@@ -13,6 +13,8 @@
 name: 'Kubernetes Cluster - Create secret'
 description: |
   Create secret to store pipeline credentials on Kubernetes Cluster
+metadata:
+  labels: {platform: AIOps}
 inputs:
   - {name: token,           description: 'Required. GitHub token for accessing private repository'}
   - {name: url,             description: 'Required. GitHub raw path for accessing the credential file'}

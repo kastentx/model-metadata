@@ -13,6 +13,8 @@
 name: 'IBM Cloud Spark Service - Train model'
 description: |
   Create and train Spark model with IBM Cloud Spark Service
+metadata:
+  labels: {platform: 'IBM Watson'}
 inputs:
   - {name: bucket_name,           description: 'Required. Object storage bucket name', default: 'dummy-bucket-name'}
   - {name: data_filename,         description: 'Name of the data binary', default: 'credit_risk_training.csv'}
